@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NkpAccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/greeting', function () {
-    return "<h1>Hello, Nguyen Khanh Phong</1>";
-});
+Route::get('/account',[NkpAccountController::class,'index'])->name('account.index');
